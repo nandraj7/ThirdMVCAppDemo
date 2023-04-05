@@ -1,0 +1,48 @@
+﻿
+@model List<User>
+
+<html>
+    <head>
+        <title></title>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .table{
+                border:2px solid black;
+            }
+        </style>
+
+    </head>
+    <body>
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Gender</td>
+                    <td>Update</td>
+                    <td>Action</td>
+                 </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Name</td>
+                        <td>@user.Gender</td>
+                        <td><a href="Home/Edit">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                }
+             </tbody>
+
+        </table>
+   @* <input type="submit" value="Create" />*@
+        <a href="Home/Create/">Create</a>
+
+    </body>
+</html>
+
+    

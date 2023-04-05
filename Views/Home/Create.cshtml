@@ -1,0 +1,19 @@
+﻿@model User
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+         <h1>Create New User</h1>
+
+        <form asp-controller="Home" asp-action="Create" method="post">
+            Name:
+            <input type="text" asp-for="Name" /><br /><br />
+            Gender:
+            <input type="text" asp-for="Gender" /><br /><br />
+
+            <input type="submit" value="Create" />
+        </form>
+    </body>
+</html>
