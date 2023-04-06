@@ -31,9 +31,38 @@ namespace ThirdMVCAppDemo.Controllers
 
             return RedirectToAction("Index");
         }
-        public IActionResult Edit()
+
+        public IActionResult Delete(int id)
         {
-            return View();
+            SecondMvcappDemoContext db = new SecondMvcappDemoContext();
+            var user = db.Users.Find(id);
+            if (user != null)
+            {
+                db.Users.Remove(user);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            SecondMvcappDemoContext db = new SecondMvcappDemoContext();
+            var user = db.Users.Find(id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult Update(User user)
+        {
+            SecondMvcappDemoContext db = new SecondMvcappDemoContext();
+            db.Users.Update(user);
+            db.SaveChanges();
+
+
+
+            return RedirectToAction("Index");
         }
 
     }

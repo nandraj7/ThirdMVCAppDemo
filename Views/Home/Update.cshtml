@@ -1,0 +1,20 @@
+﻿@model User
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1 align="center">Update User</h1>
+
+    <form align="center" asp-controller="Home" asp-action="Update" method="post"><br />
+
+        Name:
+        <input type="text" asp-for="Name" /><br /><br />
+        Gender:
+        <input type="text" asp-for="Gender" /><br /><br />
+
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>

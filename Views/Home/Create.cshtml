@@ -3,11 +3,16 @@
 <html>
     <head>
         <title></title>
+         <style>
+            .form{
+                border:2px solid black;
+            }
+        </style>
     </head>
     <body>
-         <h1>Create New User</h1>
-
-        <form asp-controller="Home" asp-action="Create" method="post">
+         <h1 align="center">Create New User</h1><br />
+         
+        <form align="center" asp-controller="Home" asp-action="Create" method="post">
             Name:
             <input type="text" asp-for="Name" /><br /><br />
             Gender:
