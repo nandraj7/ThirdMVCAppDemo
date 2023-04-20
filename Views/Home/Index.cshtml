@@ -1,16 +1,8 @@
-﻿
-@model List<User>
+﻿@model List<UserRegistrationViewModel>
 
 <html>
     <head>
         <title></title>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <style>
-            .table{
-                border:2px solid black;
-            }
-        </style>
-
     </head>
     <body>
         <h3 align="center">Index View</h3>
@@ -18,8 +10,11 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Name</td>
+                    <td>Email</td>
+                    <td>FirstName</td>
+                    <td>LastName</td>
                     <td>Gender</td>
+                    <td>MobileNumber</td>
                     <td>Update</td>
                     <td>Delete</td>
                  </tr>
@@ -31,8 +26,11 @@
                 {
                     <tr>
                         <td>@user.Id</td>
-                        <td>@user.Name</td>
+                        <td>@user.Email</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
                         <td>@user.Gender</td>
+                        <td>@user.MobileNumber</td>
                     <td><a href="Home/Update/@user.Id">Edit</a></td>
                     <td><a href="Home/Delete/@user.Id">Delete</a></td>
                     </tr>
@@ -40,7 +38,6 @@
              </tbody>
 
         </table>
-   @* <input type="submit" value="Create" />*@
         <a href="Home/Create/" class="btn btn-primary">Create</a>
 
     </body>
